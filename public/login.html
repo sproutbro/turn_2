@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="login-card">
+      <h2>비회원 로그인</h2>
+
+      <!-- 닉네임 입력 필드 -->
+      <input
+        type="text"
+        class="nickname-input"
+        placeholder="닉네임을 입력하세요"
+        id="nickname"
+      />
+
+      <!-- 비회원 로그인 버튼 -->
+      <a href="#" class="guest-button" onclick="guestLogin()">비회원 로그인</a>
+
+      <h2>로그인</h2>
+      <!-- Google 로그인 버튼 -->
+      <a href="#" class="login-button google">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+          alt="Google Logo"
+        />
+        구글로 로그인
+      </a>
+
+      <!-- Facebook 로그인 버튼 -->
+      <a href="#" class="login-button facebook">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+          alt="Facebook Logo"
+        />
+        페이스북으로 로그인
+      </a>
+
+      <!-- Kakao 로그인 버튼 -->
+      <a href="#" class="login-button kakao">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Kakao_logo.jpg"
+          alt="Kakao Logo"
+        />
+        카카오로 로그인
+      </a>
+    </div>
+
+    <script>
+      function guestLogin() {
+        const nickname = document.getElementById("nickname").value;
+        if (nickname.trim() === "") {
+          alert("닉네임을 입력해주세요.");
+        } else {
+          alert(`'${nickname}' 님, 비회원으로 로그인되었습니다.`);
+          // 비회원 로그인 로직 추가 가능
+        }
+      }
+    </script>
+  </body>
+</html>

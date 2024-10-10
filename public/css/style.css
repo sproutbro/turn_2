@@ -1,0 +1,110 @@
+/* 기본 스타일 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 배경 스타일 */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f3f4f6;
+}
+
+/* 로그인 카드 스타일 */
+.login-card {
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-card h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.nickname-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.guest-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.guest-button:hover {
+  background-color: #45a049;
+}
+
+.login-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.login-button img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+/* 소셜 로그인 버튼 스타일 */
+.google {
+  background-color: #4285f4;
+}
+.google:hover {
+  background-color: #357ae8;
+}
+
+.facebook {
+  background-color: #3b5998;
+}
+.facebook:hover {
+  background-color: #334d84;
+}
+
+.kakao {
+  background-color: #fee500;
+  color: #333;
+}
+.kakao:hover {
+  background-color: #e5cf00;
+}
+
+.login-footer {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
