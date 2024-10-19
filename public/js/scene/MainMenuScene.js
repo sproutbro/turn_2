@@ -70,13 +70,40 @@ export default class MainMenuScene extends Phaser.Scene {
       planetImage.setScale(2);
       planetImage.setDepth(2);
       planetImage.setInteractive();
-      planetImage.on("pointerdown", () => handlePlanetClick(this, planets[i]));
+      planetImage.on("pointerdown", () =>
+        handlePlanetClick(this, planets[i], i)
+      );
     });
 
-    function handlePlanetClick(scene, planet) {
+    let startEvent = null;
+    function handlePlanetClick(scene, planet, i) {
       scene.background.setTexture(`menu_background_${planet.name}`);
       drawRoundedRects(graphics, uiWindows, planet.color);
+
+      if (!startEvent) {
+        startEvent = scene.add
+          .rectangle(2 * 40, 13 * 40, 14 * 40, 3 * 40, "0xFF0000", 0.5)
+          .setOrigin(0, 0);
+        startEvent.setInteractive();
+        startEvent.on("pointerdown", () => {
+          scene.scene.start("GameScene", { planet: i });
+        });
+      }
     }
+
+    // create event
+    const storeEvent = this.add
+      .rectangle(2 * 40, 28 * 40, 14 * 40, 3 * 40, "0xFF0000", 0)
+      .setOrigin(0, 0);
+    storeEvent.setInteractive();
+    storeEvent.on("pointerdown", () => {
+      this.background.setTexture("menu_background");
+      drawRoundedRects(graphics, uiWindows);
+      if (startEvent) {
+        startEvent.destroy();
+        startEvent = null;
+      }
+    });
   }
 
   update() {}
